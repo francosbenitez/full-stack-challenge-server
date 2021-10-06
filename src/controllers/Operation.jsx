@@ -40,21 +40,5 @@ exports.delete = async (req, res) => {
     await Operation.destroy({
         where: { operation_id: req.params.operationId }
     });
-    res.json({ success: "Se ha borrado la película"})
+    res.json({ success: "Se ha borrado"})
 };
-
-// exports.delete = (req, res) => {
-//     const OperationId = req.params.operationId;
-
-//     Operation.destroy({
-//         where: {
-//             operation_id: OperationId
-//         }
-//     }).then(nums => {
-//         res.send({ message: `${nums} Transacción eliminada!` });
-//     }).catch(err => {
-//         res.status(500).send({
-//             errors: err.errors
-//         })
-//     })
-// }
