@@ -22,4 +22,7 @@ db.sequelize = sequelize;
 db.user = require('./User.jsx')(sequelize, Sequelize);
 db.operation = require('./Operation.jsx')(sequelize, Sequelize);
 
+//db.user.hasMany(db.operation);
+//db.operation.belongsTo(db.user);
+
 module.exports = db;
