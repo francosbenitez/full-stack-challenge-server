@@ -1,7 +1,7 @@
 const db = require('../models/index.jsx');
 const Operation = db.operation;
-const User = db.user;
-const sequelize = require('sequelize');
+//const User = db.user;
+//const sequelize = require('sequelize');
 
 exports.getOperations = async (req, res) => {
     const operations = await Operation.findAll(); 

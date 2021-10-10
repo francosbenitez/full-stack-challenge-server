@@ -6,16 +6,13 @@ const { validationResult } = require("express-validator");
 const moment = require("moment");
 
 exports.signUp = async (req, res) => {
-
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(422).json({ errores: errors.array() })
     }
-
     req.body.password = bcrypt.hashSync(req.body.password, 10);
     const user = await User.create(req.body);
     res.json(user);
-
 }
 
 exports.signIn = async (req, res) => {
