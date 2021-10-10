@@ -9,10 +9,10 @@ app.use(express.json());
 
 const db = require("./src/models/index.jsx");
 
-db.sequelize.sync({ force: false });
-// db.sequelize.sync({ force: true }).then(() => {
-//    console.log("Drop and re-sync db.");
-//  });
+//db.sequelize.sync({ force: false });
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+});
 
 const getRoutes = require("./src/routes/index.jsx");
 
