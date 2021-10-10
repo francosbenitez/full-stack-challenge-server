@@ -23,7 +23,7 @@ exports.signIn = async (req, res) => {
     if (user) {
         const equals = bcrypt.compareSync(req.body.password, user.password);
         if (equals) {
-            res.json({ success: createToken(user) })
+            res.json({ success: createToken(user), id: user.user_id })
         } else {
             res.json({ error: "Error en usuario y/o contraseña" });
         }
